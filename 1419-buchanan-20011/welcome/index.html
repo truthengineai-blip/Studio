@@ -6,35 +6,37 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  
+ 
   gtag('config', 'G-X889MYFV7L', {
     'custom_map': {'dimension1': 'client_id'}
   });
   
   const pathArray = window.location.pathname.split('/');
-  const assetId = pathArray[pathArray.length - 3] || '1419-Buchanan-20011';
+  const assetId = pathArray[pathArray.length - 3] || '1419-buchanan-20011';
   gtag('event', 'silo_view', {'client_id': assetId});
 </script>
-
+ 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Truth Engine: 1419 Buchanan Dossier</title>
+ 
+  <title>Truth Engine: Neighborhood Dossier | 1419 Buchanan</title>
+ 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
-
+ 
   <style>
       .font-serif { font-family: 'Cormorant Garamond', serif; }
       .font-sans { font-family: 'Inter', sans-serif; }
-      
+ 
       :root {
-          --bg-color: #0A0A0A;
-          --accent-gold: #C5A059;
-          --accent-prestige: #FACC15;
+          --bg-color: #0A0A0A; /* Deep Onyx */
+          --accent-gold: #C5A059; /* Muted Champagne Gold */
+          --accent-prestige: #FACC15; /* High-vis Highlight */
           --text-main: #FFFFFF;
           --text-muted: #A1A1AA;
           --card-border: rgba(197, 160, 89, 0.15);
       }
-
+ 
       body {
           background-color: var(--bg-color);
           color: var(--text-main);
@@ -42,38 +44,38 @@
               radial-gradient(circle at 0% 0%, rgba(197, 160, 89, 0.03) 0%, transparent 50%),
               radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
       }
-
+ 
       .prestige-border {
           border: 1px solid var(--card-border);
           transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
-
+ 
       .prestige-border:hover {
           border-color: rgba(197, 160, 89, 0.4);
           background: rgba(255, 255, 255, 0.02);
       }
-
+ 
       ::-webkit-scrollbar { width: 4px; }
       ::-webkit-scrollbar-track { background: #000; }
       ::-webkit-scrollbar-thumb { background: var(--accent-gold); }
-
+ 
       @keyframes subtleScale {
           from { opacity: 0; transform: scale(0.99); }
           to { opacity: 1; transform: scale(1); }
       }
-
+ 
       @keyframes pulse-gold {
           0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4); }
           70% { box-shadow: 0 0 0 10px rgba(250, 204, 21, 0); }
           100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
       }
-
+ 
       .text-auth { 
-          color: rgba(197, 160, 89, 0.4);
+          color: rgba(197, 160, 89, 0.4); /* Faded Gold */
           font-family: monospace;
           letter-spacing: 0.15em;
       }
-
+ 
       .animate-entrance { animation: subtleScale 1.2s ease-out forwards; }
       .letter-spacing-luxury { letter-spacing: 0.3em; }
       .pulse-prestige { animation: pulse-gold 2s infinite; }
@@ -81,7 +83,7 @@
   </style>
 </head>
 <body class="font-sans min-h-screen flex flex-col antialiased">
-
+ 
   <header class="w-full py-8 px-10 flex justify-between items-center sticky top-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-xl border-b border-white/5">
       <div class="flex items-center gap-4">
           <div class="w-10 h-10 border-t border-l border-[var(--accent-gold)] flex items-center justify-center">
@@ -91,13 +93,13 @@
       </div>
       <div class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-light">Established MMXXV</div>
   </header>
-
+ 
   <main class="flex-grow container mx-auto px-6 py-12 md:py-20 max-w-6xl">
-
+ 
       <section class="mb-24 text-center animate-entrance">
           <p class="text-[var(--accent-gold)] text-[10px] letter-spacing-luxury uppercase mb-6">Neighborhood Dossier</p>
           <h2 class="font-serif text-5xl md:text-8xl font-light mb-6 tracking-tight">
-              1419 BUCHANAN ST NW
+              1419 Buchanan St NW
           </h2>
           <div class="w-24 h-[1px] bg-[var(--accent-gold)] mx-auto mb-8 opacity-40"></div>
           <div class="inline-block px-8 py-3 rounded-full bg-white/5 border border-white/10">
@@ -106,28 +108,28 @@
               </p>
           </div>
           <div class="mt-12 text-zinc-400 max-w-3xl mx-auto leading-relaxed font-serif text-2xl italic">
-              "Ninety days have passed since you took the keys, and by now, the boxes are gone and the echoes have been replaced by the rhythm of daily life. While the first three months are about learning the light switches, the next phase is about mastering the terrain. You aren’t just living in a zip code; you’ve claimed a stake in one of the District’s most resilient, leafy corridors."
+              "Ninety days have passed since you claimed your stake in one of the District’s most architecturally resilient corridors. By now, the boxes are gone, the art is hung, and the 'house' has likely transitioned into a 'home.'<br><br>But home isn't just within your four walls; it’s the mastery of the three-block radius and the tactical knowledge of the rhythm that defines your street."
           </div>
       </section>
-
+ 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           <button onclick="switchTab('section1')" id="tab-section1" class="prestige-border p-10 text-center group border-[var(--accent-gold)]">
               <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Narrative</span>
               <h3 class="font-serif text-2xl text-white">Bones & Origin</h3>
           </button>
-          <button onclick="switchTab('section2')" id="tab-section2" class="prestige-border p-10 text-center group">
+          <button onclick="switchTab('section2')" id="tab-section2" class="prestige-border p-10 text-center group border-white/5">
               <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Lifestyle</span>
               <h3 class="font-serif text-2xl text-white">Tactical Rotation</h3>
           </button>
-          <button onclick="switchTab('section3')" id="tab-section3" class="prestige-border p-10 text-center group">
+          <button onclick="switchTab('section3')" id="tab-section3" class="prestige-border p-10 text-center group border-white/5">
               <span class="text-[9px] text-zinc-500 uppercase tracking-[0.3em] block mb-4 group-hover:text-[var(--accent-gold)]">The Outlook</span>
               <h3 class="font-serif text-2xl text-white">Seasonal Horizon</h3>
           </button>
       </div>
-
+ 
       <div class="bg-white/[0.01] border border-white/5 p-10 md:p-20 min-h-[500px] relative animate-entrance">
-          
-          <div id="content-section1" class="content-section transition-all duration-700">
+ 
+          <div id="content-section1" class="content-section transition-all duration-700 opacity-100">
               <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
                   <h3 class="font-serif text-3xl italic text-white">Architectural Heritage</h3>
               </div>
@@ -149,18 +151,17 @@
                           </div>
                       </div>
                   </div>
-
                   <div class="space-y-8 max-w-3xl mx-auto">
                       <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold">Structural Provenance</h4>
                       <div class="p-10 border-l border-[var(--accent-gold)]/20 bg-white/[0.01]">
                           <p class="text-zinc-400 font-serif text-2xl md:text-3xl leading-relaxed italic">
-                              Long before the current skyline took shape, your immediate vicinity was defined by the "Streetcar Suburb" boom of the early 20th century. Specifically, the block around 1419 Buchanan sits on land that was once part of the expansive "Argyle" estate. While many DC neighborhoods were built for density, your specific pocket was designed for the "Garden City" aesthetic—explaining the wider lots and the intentional preservation of the canopy that still defines your morning view.
+                              Your specific block sits on the edge of what was once the massive "Blagden Terrace" estate. While much of DC was built in a rush, 16th Street Heights was designed as a "suburb in the city," purposefully keeping the 1920s Wardman-style "bones" of your rowhouses intact.
                           </p>
                       </div>
                   </div>
               </div>
           </div>
-
+ 
           <div id="content-section2" class="content-section hidden opacity-0 transition-all duration-700">
               <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
                   <h3 class="font-serif text-3xl italic text-white">The Spots</h3>
@@ -170,22 +171,22 @@
                   <div class="group py-4">
                       <div class="flex flex-col md:flex-row gap-10">
                           <div class="md:w-1/3">
-                              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier I // THE PRIME [0.8 mi]</span>
-                              <h4 class="font-serif text-2xl text-white mt-2">Rock Creek Park & Nature Center</h4>
+                              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier I // THE NORTH STAR</span>
+                              <h4 class="font-serif text-2xl text-white mt-2">The Fitz (Fitzgerald’s) [0.9 mi]</h4>
                           </div>
                           <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
-                              While every tourist finds the zoo, the "Insider" North Star is the Planetarium and the hidden trailheads off Military Road. It is the lungs of the city and your literal backyard.
+                              It’s the baseline for a reason. While every visitor to the area wants a table here for the prestige and cocktails, it remains the essential neighborhood handshake.
                           </div>
                       </div>
                   </div>
                   <div class="group py-4">
                       <div class="flex flex-col md:flex-row gap-10">
                           <div class="md:w-1/3">
-                              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier II // THE FOUNDATION [0.4 mi]</span>
-                              <h4 class="font-serif text-2xl text-white mt-2">Moreland’s Tavern</h4>
+                              <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier II // THE ANCHOR</span>
+                              <h4 class="font-serif text-2xl text-white mt-2">Moreland’s Tavern [1.1 mi]</h4>
                           </div>
                           <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
-                              The "Old Guard" ritual spot. It’s where the neighborhood’s institutional memory resides. Whether it’s a rainy Tuesday or a celebratory Friday, the burger here is the neighborhood’s unofficial handshake.
+                              The Friday night ritual. A consistent burger and heavy pour serving as the unofficial clubhouse for locals who value authenticity over trends.
                           </div>
                       </div>
                   </div>
@@ -195,80 +196,80 @@
                       </div>
                       <div class="flex flex-col md:flex-row gap-10">
                           <div class="md:w-1/3">
-                              <span class="text-[9px] text-[var(--accent-prestige)] uppercase tracking-[0.4em] font-black">Tier III // The Secret [1.1 mi]</span>
-                              <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">Meli</h4>
+                              <span class="text-[9px] text-[var(--accent-prestige)] uppercase tracking-[0.4em] font-black">Tier III // THE SECRET</span>
+                              <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">Timber Pizza Co. [0.6 mi]</h4>
                           </div>
                           <div class="md:w-2/3 text-[var(--accent-prestige)]/80 font-serif text-xl leading-relaxed pt-2 italic">
-                              Mediterranean-inspired "Cottage Kitchen" vibe that prioritizes memberships and high-concept intimacy. PRO TIP: Look for their curated market hours if you can’t snag a dinner table; their sourdough and spreads are the ultimate weekend flex.
+                              The "Inner Club" move is the off-menu seasonal prep. Tourists wait in line; locals order ahead. Pro Tip: Ask for the "Green Monster" with the honey drizzle—it’s the unspoken upgrade.
                           </div>
                       </div>
                   </div>
               </div>
           </div>
-
+ 
           <div id="content-section3" class="content-section hidden opacity-0 transition-all duration-700">
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                   <div class="space-y-12">
                       <div>
-                          <span class="text-[9px] text-[var(--accent-gold)] uppercase tracking-[0.4em] font-bold">The Rhythm // 0.6 mi</span>
-                          <h4 class="font-serif text-2xl text-white mt-2">Uptown Farmers Market</h4>
-                          <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">Located at 14th & Kennedy St NW. Every Saturday morning, this is where the neighborhood pulse is measured and the community heartbeat is most audible.</p>
+                          <span class="text-[9px] text-[var(--accent-gold)] uppercase tracking-[0.4em] font-bold">The Rhythm // 0.8 mi</span>
+                          <h4 class="font-serif text-2xl text-white mt-2">Petworth Farmers Market</h4>
+                          <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">The neighborhood’s heartbeat. Every Saturday morning, this becomes the primary social intersection where 16th Street Heights and Petworth converge.</p>
                       </div>
                       <div class="pt-8 border-t border-white/5">
                           <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">The Chronos Calendar</span>
                           <div class="mt-6 space-y-8">
                               <div class="flex gap-6">
-                                  <div class="text-[var(--accent-gold)] font-serif text-xl italic w-20 shrink-0">Seasonal</div>
+                                  <div class="text-[var(--accent-gold)] font-serif text-xl italic w-20 shrink-0">SEASONAL</div>
                                   <div>
-                                      <h5 class="text-white text-sm uppercase tracking-widest font-semibold">16th Street Heights Porchfest</h5>
-                                      <p class="text-zinc-500 text-xs mt-1">PRO TIP: Keep an eye on the neighborhood listserv; the micro-concerts on nearby porches are the highlight of the local spring/summer transition.</p>
+                                      <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Jazz at the Parks</h5>
+                                      <p class="text-zinc-500 text-xs mt-1">Keep an eye on the Walter Reed development schedule—sophisticated lawn gatherings in NW.</p>
                                   </div>
                               </div>
                               <div class="flex gap-8">
-                                  <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">Monthly</div>
+                                  <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">RECURRING</div>
                                   <div>
-                                      <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Colorado Avenue Pop-up</h5>
-                                      <p class="text-zinc-500 text-xs mt-2 italic">Check the schedule at ANXO; the rotating food truck residency hits the 14th street corridor every third Thursday.</p>
+                                      <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Upshur Street Art Craft</h5>
+                                      <p class="text-zinc-500 text-xs mt-2 italic">A recurring pop-up that defines the local "maker" culture and artistic pedigree.</p>
                                   </div>
                               </div>
                           </div>
                       </div>
                   </div>
-
                   <div class="relative p-10 bg-white/[0.02] border border-[var(--accent-gold)]/20 overflow-hidden">
                       <h4 class="font-serif text-3xl text-white italic">The Retail Gravity Shift</h4>
                       <div class="mt-8 space-y-6">
-                          <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">"The Kennedy Street revitalization continues its westward march. Expect two new 'fast-fine' dining concepts to break ground within 0.7 miles of your front door by the end of the fiscal year, further solidifying the 20011 'Goldilocks' zone—urban enough to be relevant, quiet enough to be home."</p>
+                          <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">"The Northern Gateway project continues to evolve at the old Walter Reed site. Expect a significant influx of high-concept retail and 'Green' infrastructure that will likely compress the inventory in your immediate zip code."</p>
                           <div class="p-6 bg-[var(--accent-gold)]/5 border-l-2 border-[var(--accent-gold)]">
-                              <p class="text-white text-sm mt-2">Anticipated stabilization of new retail clusters: Q4 2026.</p>
+                              <p class="text-white text-sm mt-2">Advisor Note: Anticipate ecosystem stabilization by Q4 2026 as flagship retail anchors secure occupancy.</p>
                           </div>
                       </div>
                   </div>
               </div>
           </div>
+ 
       </div>
-
+ 
       <footer class="mt-24 text-center pb-20">
           <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-16 max-w-4xl mx-auto">
-              <a href="#" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
+              <a href="https://g.page/r/YOUR_AGENT_REVIEW_LINK/review" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
                   <span class="text-white group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em] transition-colors duration-500">
                       Attest to Excellence
                   </span>
               </a>
-
-              <a href="https://script.google.com/macros/s/AKfycbyLbOuW4tsP6bVocP9zFYKC3RUBKA-1dBWSiNJp6ur7jOiBimW2tjDQ3Sv6Lf8wRb4y/exec?pid=1419-Buchanan-20011&dest=CONSULT" class="flex-1 group relative px-8 py-5 flex items-center justify-center border border-[var(--accent-gold)] bg-[var(--accent-gold)] transition-all duration-500 hover:bg-transparent overflow-hidden">
+ 
+              <a href="https://script.google.com/macros/s/AKfycbxV-YmNdRa3vqhmuQDOawRz3HcwchlweaPsd7jYsX9KINWAm__cC-scWKcggSIDtzBJ/exec?pid=1419-buchanan-20011&dest=CONSULT" class="flex-1 group relative px-8 py-5 flex items-center justify-center border border-[var(--accent-gold)] bg-[var(--accent-gold)] transition-all duration-500 hover:bg-transparent overflow-hidden">
                   <span class="relative text-black group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em] transition-colors duration-500">
                       Consult The Advisor.
                   </span>
               </a>
-
-              <a href="https://script.google.com/macros/s/AKfycbyLbOuW4tsP6bVocP9zFYKC3RUBKA-1dBWSiNJp6ur7jOiBimW2tjDQ3Sv6Lf8wRb4y/exec?pid=1419-Buchanan-20011&dest=LICENSE" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-zinc-500">
+ 
+              <a href="https://script.google.com/macros/s/AKfycbxV-YmNdRa3vqhmuQDOawRz3HcwchlweaPsd7jYsX9KINWAm__cC-scWKcggSIDtzBJ/exec?pid=1419-buchanan-20011&dest=LICENSE" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-zinc-500">
                   <span class="text-white group-hover:text-zinc-300 text-[10px] font-bold uppercase tracking-[0.3em] transition-colors duration-500">
                       License Truth Engine™
                   </span>
               </a>
           </div>
-
+ 
           <div class="space-y-4">
               <div class="w-12 h-[1px] bg-white/10 mx-auto"></div>
               <p class="text-[9px] text-zinc-600 uppercase tracking-[0.5em] font-light">
@@ -276,15 +277,16 @@
               </p>
               <p class="text-[8px] text-zinc-700 uppercase tracking-[0.2em]">Local Expertise // Verified Intelligence</p>
           </div>
-
+ 
           <div class="mt-4 flex justify-center">
               <span class="text-auth text-[7px] uppercase tracking-widest">
                   Source-ID: truthengine.io/briefing/auth_1419-buchanan-20011
               </span>
           </div>
       </footer>
+ 
   </main>
-
+ 
   <script>
       function switchTab(tabName) {
           document.querySelectorAll('button[id^="tab-"]').forEach(btn => {
@@ -293,13 +295,13 @@
           });
           document.getElementById(`tab-${tabName}`).classList.remove('border-white/5');
           document.getElementById(`tab-${tabName}`).classList.add('border-[var(--accent-gold)]');
-
+ 
           document.querySelectorAll('.content-section').forEach(section => {
               section.classList.add('hidden');
               section.classList.remove('opacity-100');
               section.classList.add('opacity-0');
           });
-
+ 
           const activeSection = document.getElementById(`content-${tabName}`);
           activeSection.classList.remove('hidden');
           setTimeout(() => {
@@ -307,22 +309,6 @@
               activeSection.classList.add('opacity-100');
           }, 50);
       }
-
-      document.addEventListener('DOMContentLoaded', () => {
-          const handshakeBase = "https://script.google.com/macros/s/AKfycbyLbOuW4tsP6bVocP9zFYKC3RUBKA-1dBWSiNJp6ur7jOiBimW2tjDQ3Sv6Lf8wRb4y/exec";
-          const pathParts = window.location.pathname.split('/');
-          const derivedAssetId = pathParts[pathParts.length - 3] || "1419-Buchanan-20011";
-
-          const consultBtn = document.querySelector('a[href*="CONSULT"]');
-          const licenseBtn = document.querySelector('a[href*="LICENSE"]');
-
-          if(consultBtn) {
-              consultBtn.href = `${handshakeBase}?pid=${derivedAssetId}&dest=CONSULT`;
-          }
-          if(licenseBtn) {
-              licenseBtn.href = `${handshakeBase}?pid=${derivedAssetId}&dest=LICENSE`;
-          }
-      });
   </script>
 </body>
 </html>
