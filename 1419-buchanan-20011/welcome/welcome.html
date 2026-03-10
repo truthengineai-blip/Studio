@@ -9,33 +9,32 @@
   
   const urlParams = new URLSearchParams(window.location.search);
   
-  const utmSource   = urlParams.get('utm_source'); 
-  const utmMedium   = urlParams.get('utm_medium'); 
-  const utmCampaign = urlParams.get('utm_campaign');
-  const utmId       = urlParams.get('utm_id');     
-  const utmContent  = urlParams.get('utm_content');
+  const utmSource   = urlParams.get('utm_source') || 'sourcepatrick'; 
+  const utmMedium   = urlParams.get('utm_medium') || 'email'; 
+  const utmCampaign = urlParams.get('utm_campaign') || 'welcome';
+  const utmContent  = urlParams.get('utm_content') || 'buyertyler';
   
   const pathArray = window.location.pathname.split('/');
-  const finalAssetId = utmId || "1419-buchanan-20011";
+  const finalAssetId = urlParams.get('utm_id') || '1419-buchanan-20011';
   
   gtag('config', 'G-X889MYFV7L', {
-    'debug_mode': true,
-    'custom_map': {
-        'dimension1': 'asset_id', 
-        'dimension2': 'source', 
-        'dimension3': 'content',
-        'dimension4': 'medium',
-        'dimension5': 'campaign'
-    }
-  });
+  'debug_mode': true, 
+  'custom_map': {
+      'dimension1': 'asset_id', 
+      'dimension2': 'source', 
+      'dimension3': 'content',
+      'dimension4': 'medium',
+      'dimension5': 'campaign'
+  }
+});
   
   gtag('event', 'silo_view', {
-    'asset_id': finalAssetId,
-    'source': utmSource || 'sean-taylor',
-    'medium': utmMedium || 'email',
-    'content': utmContent || 'gronk',
-    'campaign': utmCampaign || 'welcome'
-  });
+  'asset_id': finalAssetId,
+  'source': utmSource,
+  'medium': 'dossier_open',
+  'content': utmContent,
+  'campaign': utmCampaign
+});
 </script>
 
   <meta charset="UTF-8">
@@ -43,14 +42,13 @@
   <title>Truth Engine: Neighborhood Dossier | 1419 Buchanan</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
-
   <style>
       .font-serif { font-family: 'Cormorant Garamond', serif; }
       .font-sans { font-family: 'Inter', sans-serif; }
       :root {
-          --bg-color: #0A0A0A;
-          --accent-gold: #C5A059;
-          --accent-prestige: #FACC15;
+          --bg-color: #0A0A0A; 
+          --accent-gold: #C5A059; 
+          --accent-prestige: #FACC15; 
           --text-main: #FFFFFF;
           --text-muted: #A1A1AA;
           --card-border: rgba(197, 160, 89, 0.15);
@@ -83,9 +81,9 @@
           100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
       }
       .text-auth { 
-        color: rgba(197, 160, 89, 0.4);
-        font-family: monospace;
-        letter-spacing: 0.15em;
+          color: rgba(197, 160, 89, 0.4); 
+          font-family: monospace;
+          letter-spacing: 0.15em;
       }
       .animate-entrance { animation: subtleScale 1.2s ease-out forwards; }
       .letter-spacing-luxury { letter-spacing: 0.3em; }
@@ -110,7 +108,7 @@
       <section class="mb-24 text-center animate-entrance">
           <p class="text-[var(--accent-gold)] text-[10px] letter-spacing-luxury uppercase mb-6">Neighborhood Dossier</p>
           <h2 class="font-serif text-5xl md:text-8xl font-light mb-6 tracking-tight">
-              1419 Buchanan St NW
+              1419 BUCHANAN ST NW
           </h2>
           <div class="w-24 h-[1px] bg-[var(--accent-gold)] mx-auto mb-8 opacity-40"></div>
           <div class="inline-block px-8 py-3 rounded-full bg-white/5 border border-white/10">
@@ -119,7 +117,7 @@
               </p>
           </div>
           <div class="mt-12 text-zinc-400 max-w-3xl mx-auto leading-relaxed font-serif text-2xl italic">
-              "Now that the boxes are recycled and the echo of the move has faded, you’ve transitioned from a resident to a stakeholder. Mastery of this corridor requires more than just a mortgage; it requires an understanding of the rhythm that keeps this enclave of the District distinct."
+              "Ninety days have passed since the ink dried, and the transition from 'owner' to 'local authority' is now complete. While the first few months are often consumed by the mechanics of moving boxes, the true value of your investment lies just beyond your front door. You have officially graduated from resident to stakeholder."
           </div>
       </section>
 
@@ -167,11 +165,11 @@
                       <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold">Structural Provenance</h4>
                       <div class="p-10 border-l border-[var(--accent-gold)]/20 bg-white/[0.01]">
                           <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
-                              The structure stands as a classic Wardman-style influence, constructed with high-fired red brick and designed for longevity, originally marketed to the city's burgeoning professional class seeking the elevated air of the Heights.
+                              Your residence sits on land that was once part of the expansive "Rock Creek" rural estates before the 1920s development boom. 1419 Buchanan is a classic example of Wardman-era influence—built with iconic red DC brick and featuring a deep-set covered porch designed for pre-air-conditioning social cooling.
                           </p>
                           <br><br>
                           <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
-                              Beyond the facade lies the subterranean history of the Underground Railroad routes that snaked through this wooded corridor. This area served as a literal high-ground vantage point, making it one of the most strategically significant residential blocks in D.C.
+                              Historically, this radius was known as the "Gold Coast," a sanctuary for DC’s professional elite. During the mid-20th century, the basement "speakeasy" culture was vibrant in this specific pocket, as prominent figures hosted private social salons that bypassed the more restrictive clubs of the era.
                           </p>
                       </div>
                   </div>
@@ -188,10 +186,10 @@
                       <div class="flex flex-col md:flex-row gap-10">
                           <div class="md:w-1/3">
                               <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier I // THE PRIME</span>
-                              <h4 class="font-serif text-2xl text-white mt-2">Moreland’s Tavern [1.2 mi]</h4>
+                              <h4 class="font-serif text-2xl text-white mt-2">Timber Pizza Co. [1.2 mi]</h4>
                           </div>
                           <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
-                              The neighborhood baseline. A reliable, high-volume destination for elevated pub fare and consistent social energy.
+                              The neighborhood's most famous destination. While it draws crowds from across the city, it remains the essential baseline for local wood-fired craft.
                           </div>
                       </div>
                   </div>
@@ -199,10 +197,10 @@
                       <div class="flex flex-col md:flex-row gap-10">
                           <div class="md:w-1/3">
                               <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier II // THE FOUNDATION</span>
-                              <h4 class="font-serif text-2xl text-white mt-2">Little Coco’s [0.8 mi]</h4>
+                              <h4 class="font-serif text-2xl text-white mt-2">Moreland’s Tavern [0.8 mi]</h4>
                           </div>
                           <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
-                              The Friday night ritual spot. An Italian-inspired anchor of the 14th Street corridor providing the neighborhood's coastal vibe.
+                              The "Old Guard" Friday night ritual. Pro Tip: Skip the main floor and head straight for the "Attic" bar for a library-style atmosphere and fireplace seating.
                           </div>
                       </div>
                   </div>
@@ -213,10 +211,10 @@
                       <div class="flex flex-col md:flex-row gap-10">
                           <div class="md:w-1/3">
                               <span class="text-[9px] text-[var(--accent-prestige)] uppercase tracking-[0.4em] font-black">Tier III // The Secret</span>
-                              <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">San Mateo [0.4 mi]</h4>
+                              <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">Petworth Social Club [0.4 mi]</h4>
                           </div>
                           <div class="md:w-2/3 text-[var(--accent-prestige)]/80 font-serif text-xl leading-relaxed pt-2 italic">
-                              The inner club micro-gem. Ask for the "Hearth Butter" not listed on the starter menu; a preference known only to local mastery.
+                              The "Inner Club" gem tourists never find. A high-concept disruptor that emerged within your move-in window, offering sophisticated cocktail programs without the 14th Street wait times.
                           </div>
                       </div>
                   </div>
@@ -228,24 +226,24 @@
                   <div class="space-y-12">
                       <div>
                           <span class="text-[9px] text-[var(--accent-gold)] uppercase tracking-[0.4em] font-bold">The Rhythm // 0.9 mi</span>
-                          <h4 class="font-serif text-2xl text-white mt-2">Uptown Farmers Market</h4>
-                          <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">Less a market and more a localized town square where the neighborhood's real data exchange occurs every Saturday.</p>
+                          <h4 class="font-serif text-2xl text-white mt-2">Petworth Community Market</h4>
+                          <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">The neighborhood's central nervous system. Arrive by 9:15 AM to secure sourdough from guest bakeries before the sell-out.</p>
                       </div>
                       <div class="pt-8 border-t border-white/5">
                           <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">The Chronos Calendar</span>
                           <div class="mt-6 space-y-8">
                               <div class="flex gap-6">
-                                  <div class="text-[var(--accent-gold)] font-serif text-xl italic w-20 shrink-0">April</div>
+                                  <div class="text-[var(--accent-gold)] font-serif text-xl italic w-20 shrink-0">March</div>
                                   <div>
-                                      <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Rock Creek Spring Awakening</h5>
-                                      <p class="text-zinc-500 text-xs mt-1">Guided historical trail tours beginning at the Nature Center.</p>
+                                      <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Ward 4 Spring Pop-Up</h5>
+                                      <p class="text-zinc-500 text-xs mt-1">A rotating collection of local makers appearing on the 14th Street corridor.</p>
                                   </div>
                               </div>
                               <div class="flex gap-8">
-                                  <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">May</div>
+                                  <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">April</div>
                                   <div>
-                                      <h5 class="text-white text-sm uppercase tracking-widest font-semibold">16th Street Heights Day</h5>
-                                      <p class="text-zinc-500 text-xs mt-2 italic">Pro Tip: Look for the artisan pop-ups near the Walter Reed border.</p>
+                                      <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Rock Creek Sunset Series</h5>
+                                      <p class="text-zinc-500 text-xs mt-2 italic">Guided night hikes and history talks starting at the Nature Center.</p>
                                   </div>
                               </div>
                           </div>
@@ -255,9 +253,9 @@
                   <div class="relative p-10 bg-white/[0.02] border border-[var(--accent-gold)]/20 overflow-hidden">
                       <h4 class="font-serif text-3xl text-white italic">The Retail Gravity Shift</h4>
                       <div class="mt-8 space-y-6">
-                          <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">"The redevelopment of the Walter Reed corridor is bringing a secondary wave of high-concept retail, compressing property values upward in your immediate radius."</p>
+                          <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">"Keep an eye on the Upshur Street Corridor revitalization. There are major mixed-use developments in the zoning phase slated to increase walkability scores along your southern border."</p>
                           <div class="p-6 bg-[var(--accent-gold)]/5 border-l-2 border-[var(--accent-gold)]">
-                              <p class="text-white text-sm mt-2">Strategic developments are expected to fully settle and influence the local market by Q4 2026.</p>
+                              <p class="text-white text-sm mt-2">Strategic Shift: Anticipate Tier-1 grocery concepts to settle the immediate zone by Q4 2027.</p>
                           </div>
                       </div>
                   </div>
@@ -267,19 +265,16 @@
 
       <footer class="mt-24 text-center pb-20">
           <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-16 max-w-4xl mx-auto">
-              <a href="https://search.google.com/local/writereview?placeid=ChIJ1-Pra3HJt4kRsuAVx8ge7qY&utm_source=sean-taylor&utm_medium=email&utm_campaign=welcome&utm_id=1419-buchanan-20011&utm_content=gronk" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
+              <a href="https://search.google.com/local/writereview?placeid=ChIJ1-Pra3HJt4kRsuAVx8ge7qY&utm_source=sourcepatrick&utm_medium=cta_button&utm_campaign=welcome&utm_id=1419-buchanan-20011&utm_content=buyertyler" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
                   <span class="text-white group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em]">Attest to Excellence</span>
               </a>
-
               <a id="dynamic-consult-btn" href="#" class="flex-1 group relative px-8 py-5 flex items-center justify-center border border-[var(--accent-gold)] bg-[var(--accent-gold)] transition-all duration-500 hover:bg-transparent overflow-hidden">
                   <span class="relative text-black group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em]">Consult The Advisor.</span>
               </a>
-
               <a id="dynamic-license-btn" href="#" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-zinc-500">
                   <span class="text-white group-hover:text-zinc-300 text-[10px] font-bold uppercase tracking-[0.3em]">License Truth Engine™</span>
               </a>
           </div>
-
           <div class="space-y-4">
               <div class="w-12 h-[1px] bg-white/10 mx-auto"></div>
               <p class="text-[9px] text-zinc-600 uppercase tracking-[0.5em] font-light">Confidential Intelligence // Authorized Access Only</p>
@@ -288,12 +283,24 @@
               </div>
           </div>
       </footer>
-
   </main>
 
   <script>
       function switchTab(tabName) {
-          gtag('event', 'dossier_dissection', { 'asset_id': finalAssetId, 'method': 'tab_switch', 'tab_name': tabName, 'source': utmSource || 'sean-taylor' });
+          const tabMap = {
+              'section1': 'Bones & Origin',
+              'section2': 'Tactical Rotation',
+              'section3': 'Seasonal Horizon'
+          };
+
+          gtag('event', 'dossier_dissection', { 
+              'asset_id': tabMap[tabName] || tabName, 
+              'method': 'tab_switch', 
+              'medium': 'dossier_tabs',
+              'source': utmSource,
+              'content': utmContent
+          });
+
           document.querySelectorAll('button[id^="tab-"]').forEach(btn => {
               btn.classList.remove('border-[var(--accent-gold)]');
               btn.classList.add('border-white/5');
@@ -316,34 +323,30 @@
       }
 
       document.addEventListener('DOMContentLoaded', () => {
-          const authDisplay = document.getElementById('auth-display');
-          if (authDisplay) {
-              authDisplay.innerText = `Source-ID: truthengine.io/briefing/auth_${finalAssetId}`;
-          }
+          const commonParams = {
+              'asset_id': finalAssetId,
+              'source': utmSource,
+              'content': utmContent,
+              'campaign': utmCampaign
+          };
 
           const consultBtn = document.getElementById('dynamic-consult-btn');
           if(consultBtn) {
-              const trackingQuery = `?utm_source=${utmSource || 'sean-taylor'}&utm_medium=${utmMedium || 'email'}&utm_campaign=welcome&utm_id=${finalAssetId}&utm_content=${utmContent || 'gronk'}`;
+              const trackingQuery = `?utm_source=${utmSource}&utm_medium=cta_button&utm_campaign=${utmCampaign}&utm_id=${finalAssetId}&utm_content=${utmContent}`;
               consultBtn.href = `https://calendly.com/mejia-pas/30min${trackingQuery}`;
-              consultBtn.target = "_blank";
+              consultBtn.target = "_blank"; 
+              consultBtn.addEventListener('mousedown', () => {
+                  gtag('event', 'executive_intent', { ...commonParams, 'medium': 'consult_advisor' });
+              });
           }
 
           const licenseBtn = document.getElementById('dynamic-license-btn');
           if(licenseBtn) {
-              licenseBtn.href = `mailto:truthengine.ai@gmail.com?subject=Licensing:${finalAssetId}&body=I am interested in licensing the Truth Engine™ for my clients.`;
+              licenseBtn.href = `mailto:truthengine.ai@gmail.com?subject=Licensing:${finalAssetId}`;
+              licenseBtn.addEventListener('mousedown', () => {
+                  gtag('event', 'executive_intent', { ...commonParams, 'medium': 'license_inquiry' });
+              });
           }
-      });
-
-      let scrollTracked = false;
-      window.addEventListener('scroll', () => {
-        if (!scrollTracked && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
-          gtag('event', 'dossier_dissection', {
-            'asset_id': finalAssetId,
-            'source': utmSource || 'sean-taylor',
-            'method': 'scroll_bottom'
-          });
-          scrollTracked = true;
-        }
       });
   </script>
 </body>
