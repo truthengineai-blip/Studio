@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X889MYFV7L"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X889MYFV7L');
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // 1. Capture the "Who" and the "What"
+            const assetId = urlParams.get('utm_id') || 'unspecified_asset';
+            const clientSource = urlParams.get('utm_source') || 'direct';
+            const destination = urlParams.get('dest'); // This tells the script where to go
+
+            // 2. Define the Destinations
+            const paths = {
+                'consult': 'https://calendly.com/mejia-pas/30min',
+                'license': 'https://truthengine.io/licensing', // Or your specific license page
+                'review': 'https://search.google.com/local/writereview?placeid=ChIJ1-Pra3HJt4kRsuAVx8ge7qY'
+            };
+
+            // 3. Map the "Method" for your GA4 Report
+            const methodMap = {
+                'consult': 'Consult Intent',
+                'license': 'License Intent',
+                'review': 'Review Intent'
+            };
+
+            const targetUrl = paths[destination] || 'https://truthengine.io';
+            const methodLabel = methodMap[destination] || 'Email Click';
+
+            // 4. Log the event to your "Clean" report
+            gtag('event', 'dossier_dissection', {
+                'method': methodLabel,
+                'asset_id': assetId,
+                'source': clientSource,
+                'medium': 'email_universal_bridge'
+            });
+
+            // 5. Redirect
+            setTimeout(() => {
+                window.location.replace(targetUrl);
+            }, 500);
+        };
+    </script>
+    <style>
+        body { background-color: #000; color: #C5A059; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: serif; text-transform: uppercase; letter-spacing: 0.3em; font-size: 10px; }
+    </style>
+</head>
+<body>
+    Authenticating Secure Access...
+</body>
+</html>
