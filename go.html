@@ -13,41 +13,52 @@
             const params = new URLSearchParams(window.location.search);
             
             // 1. Extract Protocol Data
-            const destKey = params.get('dest'); // 'review', 'consult', 'license', or 'dossier'
-            const assetId = params.get('utm_id'); // e.g., 113-middlebeach-06443
-            const agent   = params.get('utm_source');
-            const buyer   = params.get('utm_content');
+            const destRaw = params.get('dest'); 
+            const assetId = params.get('utm_id') || 'unverified_asset';
+            const agent   = params.get('utm_source') || 'direct';
+            const buyer   = params.get('utm_content') || 'not_set';
+            const medium  = params.get('utm_medium') || 'email'; // Captures your 'email' silo
 
-            // 2. The Dynamic Path Builder (Following your IV Logic)
+            // 2. The Dynamic Path Builder for the Dossier
             const dossierPath = `https://truthengineai-blip.github.io/mejia-onestreet.one/${assetId}/welcome/welcome.html`;
             
-            const targets = {
-                'review': 'https://search.google.com/local/writereview?placeid=ChIJ1-Pra3HJt4kRsuAVx8ge7qY',
-                'consult': 'https://calendly.com/mejia-pas/30min',
-                'license': `mailto:truthengine.ai@gmail.com?subject=Licensing: ${assetId}`,
-                'dossier': dossierPath
-            };
+            // 3. Logic: Is it a short-key or a full URL?
+            let finalUrl;
+            let methodLabel;
 
-            const methodMap = {
-                'review': 'Review Intent',
-                'consult': 'Consult Intent',
-                'license': 'License Intent',
-                'dossier': 'Dossier Entry'
-            };
+            if (destRaw === 'dossier' || !destRaw) {
+                finalUrl = dossierPath;
+                methodLabel = 'Dossier Entry';
+            } else if (destRaw.startsWith('http') || destRaw.startsWith('mailto')) {
+                // This "uncloaks" the %2F and %3A automatically
+                finalUrl = destRaw; 
+                methodLabel = destRaw.includes('calendly') ? 'Consult Intent' : 
+                              destRaw.includes('google') ? 'Review Intent' : 'License Intent';
+            } else {
+                // Fallback for short keys if you still use them
+                const shortKeys = {
+                    'review': 'https://search.google.com/local/writereview?placeid=ChIJ1-Pra3HJt4kRsuAVx8ge7qY',
+                    'consult': 'https://calendly.com/mejia-pas/30min'
+                };
+                finalUrl = shortKeys[destRaw] || dossierPath;
+                methodLabel = destRaw.toUpperCase();
+            }
 
-            // 3. Log to GA4 Silo
+            // 4. Log to GA4 Silo
             gtag('event', 'dossier_dissection', {
-                'method': methodMap[destKey] || 'Direct Access',
+                'method': methodLabel,
                 'asset_id': assetId,
                 'source': agent,
-                'content': buyer
+                'content': buyer,
+                'medium': medium, // Securely logs 'email' before the whip
+                'event_callback': function() {
+                    // This ensures GA4 finishes before the redirect
+                    window.location.href = finalUrl;
+                }
             });
 
-            // 4. Execution
-            setTimeout(() => {
-                const finalUrl = targets[destKey] || dossierPath;
-                window.location.href = finalUrl;
-            }, 400);
+            // Fallback timeout in case GA4 is blocked/slow
+            setTimeout(() => { window.location.href = finalUrl; }, 800);
         };
     </script>
     <style>
