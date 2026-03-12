@@ -6,16 +6,17 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  
+ 
   const urlParams = new URLSearchParams(window.location.search);
   const pathArray = window.location.pathname.split('/');
-  
+ 
+  // THE GLOBAL OVERRIDE
   window.utmSource   = urlParams.get('utm_source') || 'mejia'; 
   window.utmMedium   = urlParams.get('utm_medium') || 'email'; 
   window.utmCampaign = urlParams.get('utm_campaign') || 'welcome';
   window.utmContent  = urlParams.get('utm_content') || 'tyler-lefevbre';
   window.finalAssetId = urlParams.get('utm_id') || '6464-walcott-21703';
-  
+ 
   gtag('config', 'G-X889MYFV7L', {
     'debug_mode': true, 
     'custom_map': {
@@ -26,7 +27,7 @@
         'dimension5': 'campaign'
     }
   });
-  
+ 
   gtag('event', 'silo_view', {
     'asset_id': window.finalAssetId,
     'source': window.utmSource,
@@ -38,7 +39,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truth Engine: Neighborhood Dossier | 6464 Walcott</title>
+    <title>Truth Engine: 6464 Walcott Dossier</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -46,9 +47,9 @@
         .font-sans { font-family: 'Inter', sans-serif; }
         
         :root {
-            --bg-color: #0A0A0A;
-            --accent-gold: #C5A059;
-            --accent-prestige: #FACC15;
+            --bg-color: #0A0A0A; 
+            --accent-gold: #C5A059; 
+            --accent-prestige: #FACC15; 
             --text-main: #FFFFFF;
             --text-muted: #A1A1AA;
             --card-border: rgba(197, 160, 89, 0.15);
@@ -88,7 +89,7 @@
         }
 
         .text-auth { 
-            color: rgba(197, 160, 89, 0.4);
+            color: rgba(197, 160, 89, 0.4); 
             font-family: monospace;
             letter-spacing: 0.15em;
         }
@@ -116,17 +117,16 @@
         <section class="mb-24 text-center animate-entrance">
             <p class="text-[var(--accent-gold)] text-[10px] letter-spacing-luxury uppercase mb-6">Neighborhood Dossier</p>
             <h2 class="font-serif text-5xl md:text-8xl font-light mb-6 tracking-tight">
-                6464 Walcott
+                6464 Walcott Lane
             </h2>
             <div class="w-24 h-[1px] bg-[var(--accent-gold)] mx-auto mb-8 opacity-40"></div>
             <div class="inline-block px-8 py-3 rounded-full bg-white/5 border border-white/10">
                 <p class="text-white text-xs font-light tracking-widest uppercase italic">
-                    Status: <span class="text-[var(--accent-gold)] ml-2 font-normal">Seasoned Resident // 19 Weeks In</span>
+                    Status: <span class="text-[var(--accent-gold)] ml-2 font-normal">Master of the Monocacy Plateau</span>
                 </p>
             </div>
             <div class="mt-12 text-zinc-400 max-w-3xl mx-auto leading-relaxed font-serif text-2xl italic">
-                It has been exactly 136 days since you settled into 6464 Walcott, and the rhythm of Frederick has likely begun to feel like second nature. As the Maryland landscape begins its shift into the vibrant greens of spring, your mastery of the local terrain is reaching a turning point. <br><br>
-                You are no longer just a resident; you are becoming a stakeholder in one of the most historically dense corridors in the region.
+                It has been exactly 137 days since you settled into your new home. As you watch the Frederick landscape shift from the quiet of winter into the first hints of a Maryland spring, your transition from "newcomer" to "local" is nearly complete.<br><br>You’ve likely found your favorite grocery aisle and the best route to avoid the I-270 pinch, but the true mastery of this region lies in the layers beneath the surface. Consider this your Tactical Briefing for the streets surrounding your property.
             </div>
         </section>
 
@@ -158,10 +158,10 @@
                             <div class="w-16 h-[1px] bg-[var(--accent-gold)] mb-12 opacity-50"></div>
                             <div class="space-y-6 text-center">
                                 <div class="text-white font-light tracking-geo text-xl md:text-3xl">
-                                    <span id="lat-value">39.4142°</span> <span class="ml-4 text-[var(--accent-gold)]">N</span>
+                                    <span id="lat-value">39.4144°</span> <span class="ml-4 text-[var(--accent-gold)]">N</span>
                                 </div>
                                 <div class="text-white font-light tracking-geo text-xl md:text-3xl">
-                                    <span id="lon-value">77.4103°</span> <span class="ml-4 text-[var(--accent-gold)]">W</span>
+                                    <span id="lon-value">77.4105°</span> <span class="ml-4 text-[var(--accent-gold)]">W</span>
                                 </div>
                             </div>
                             <div class="mt-16">
@@ -174,11 +174,11 @@
                         <h4 class="text-xs text-[var(--accent-gold)] uppercase tracking-[0.4em] font-semibold">Structural Provenance</h4>
                         <div class="p-10 border-l border-[var(--accent-gold)]/20 bg-white/[0.01]">
                             <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
-                                Your home sits on land that once served as the agrarian backbone of Frederick County, characterized by the Monocacy River silt that made this region the "Breadbasket of the Revolution." The architectural DNA reflects the transition from colonial limestone utility to the late-20th-century suburban expansion.
+                                Your property sits on land that was once part of the expansive agricultural "Bones" of Frederick County—specifically the fertile tracts that supported the region's 18th-century wheat boom. The architecture in this corridor reflects a modern homage to the traditional Maryland farmhouse.
                             </p>
                             <div class="h-8"></div> 
                             <p class="text-zinc-300 font-serif text-xl md:text-2xl leading-relaxed italic">
-                                Beyond the visible "Bones" lies a subterranean legacy: the Monocacy National Battlefield farmsteads in your immediate radius served as high-stakes intelligence hubs where local families navigated precarious lines, hiding supplies in "bank barns" that still dot the landscape.
+                                Just miles from your door, the fields served as a critical staging ground for the Battle of Monocacy. Local legend and historical archives note that several original farmsteads in this pocket contained "Safe Rooms" used to cache supplies as the front lines shifted between Frederick and Washington.
                             </p>
                         </div>
                     </div>
@@ -188,28 +188,28 @@
             <div id="content-section2" class="content-section hidden opacity-0 transition-all duration-700">
                 <div class="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
                     <h3 class="font-serif text-3xl italic text-white">The Spots</h3>
-                    <span class="text-[9px] text-zinc-600 tracking-widest uppercase">10-Mile Radius Lockdown</span>
+                    <span class="text-[9px] text-zinc-600 tracking-widest uppercase">Radius Lockdown</span>
                 </div>
                 <div class="space-y-12">
                     <div class="group py-4">
                         <div class="flex flex-col md:flex-row gap-10">
                             <div class="md:w-1/3">
-                                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier I // THE NORTH STAR</span>
-                                <h4 class="font-serif text-2xl text-white mt-2">White Rabbit Gastropub</h4>
+                                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier I // THE PRIME</span>
+                                <h4 class="font-serif text-2xl text-white mt-2">The Wine Kitchen</h4>
                             </div>
                             <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
-                                The undisputed heavyweight of Frederick’s modern dining scene. Known for its Belgian-heavy beer list and Detroit-style pizza, it is the neighborhood’s primary cultural anchor [4.2 mi].
+                                Located on Carroll Creek, this is the neighborhood’s definitive choice for seasonal bistro fare. Essential first stop for anyone visiting from out of town. Pro-Tip: Arrive early for a seat on the creek-side patio.
                             </div>
                         </div>
                     </div>
                     <div class="group py-4">
                         <div class="flex flex-col md:flex-row gap-10">
                             <div class="md:w-1/3">
-                                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier II // THE ANCHOR</span>
-                                <h4 class="font-serif text-2xl text-white mt-2">Dutch’s Market</h4>
+                                <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">Tier II // THE FOUNDATION</span>
+                                <h4 class="font-serif text-2xl text-white mt-2">Dutch’s Daughter</h4>
                             </div>
                             <div class="md:w-2/3 text-zinc-500 font-serif text-lg leading-relaxed pt-2 italic">
-                                A spinoff of the legendary Dutch’s Daughter, this is the "Old Guard" Friday ritual spot for high-end Maryland crab cakes without the formal wait [3.8 mi].
+                                A Frederick institution for over 40 years. Your Friday night ritual spot for white-tablecloth service and their legendary crab cakes—an "Old Guard" staple that remains undefeated.
                             </div>
                         </div>
                     </div>
@@ -219,11 +219,11 @@
                         </div>
                         <div class="flex flex-col md:flex-row gap-10">
                             <div class="md:w-1/3">
-                                <span class="text-[9px] text-[var(--accent-prestige)] uppercase tracking-[0.4em] font-black">Tier III // THE SECRET</span>
-                                <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">Show-bi Maryland</h4>
+                                <span class="text-[9px] text-[var(--accent-prestige)] uppercase tracking-[0.4em] font-black">Tier III // The Secret</span>
+                                <h4 class="font-serif text-3xl text-[var(--accent-prestige)] mt-2 italic font-semibold">Manalù Italian</h4>
                             </div>
                             <div class="md:w-2/3 text-[var(--accent-prestige)]/80 font-serif text-xl leading-relaxed pt-2 italic">
-                                An "Inner Club" gem specializing in authentic Japanese Takoyaki. It is a micro-kitchen that remains largely invisible to the weekend tourist crowds [5.1 mi].
+                                The "Inner Club" micro-gem. Authentic Neapolitan recipes that tourists never find. The Gnocchi alla Sorrentina is a mandatory order for serious residents.
                             </div>
                         </div>
                     </div>
@@ -234,25 +234,25 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div class="space-y-12">
                         <div>
-                            <span class="text-[9px] text-[var(--accent-gold)] uppercase tracking-[0.4em] font-bold">The Rhythm // 4.5 MI</span>
+                            <span class="text-[9px] text-[var(--accent-gold)] uppercase tracking-[0.4em] font-bold">The Rhythm // 4.5 Mi</span>
                             <h4 class="font-serif text-2xl text-white mt-2">Frederick Farmers Market</h4>
-                            <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">The weekly pulse of the community on 1st Street, where local dairies and heirloom growers congregate every Sunday morning.</p>
+                            <p class="text-zinc-500 font-serif text-lg leading-relaxed mt-4 italic">The neighborhood's Sunday heartbeat. Gather here to source heirloom produce from the same soil that defined the original "Bones" of the county.</p>
                         </div>
                         <div class="pt-8 border-t border-white/5">
                             <span class="text-[9px] text-zinc-500 uppercase tracking-[0.4em] font-bold">The Chronos Calendar</span>
                             <div class="mt-6 space-y-8">
                                 <div class="flex gap-6">
-                                    <div class="text-[var(--accent-gold)] font-serif text-xl italic w-20 shrink-0">MAY</div>
+                                    <div class="text-[var(--accent-gold)] font-serif text-xl italic w-20 shrink-0">April</div>
                                     <div>
-                                        <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Beyond the Garden Gates</h5>
-                                        <p class="text-zinc-500 text-xs mt-1">An exclusive look into the private, walled gardens of historic downtown Frederick.</p>
+                                        <h5 class="text-white text-sm uppercase tracking-widest font-semibold">First Saturday Celebration</h5>
+                                        <p class="text-zinc-500 text-xs mt-1">A hyper-local takeover of downtown with live music and art gallery openings.</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-8">
-                                    <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">MAY</div>
+                                    <div class="text-[var(--accent-gold)] font-serif text-2xl italic w-24 shrink-0 border-r border-white/5">May</div>
                                     <div>
                                         <h5 class="text-white text-sm uppercase tracking-widest font-semibold">Frederick Running Festival</h5>
-                                        <p class="text-zinc-500 text-xs mt-2 italic">A high-energy community weekend featuring one of the East Coast's premier half-marathons.</p>
+                                        <p class="text-zinc-500 text-xs mt-2 italic">Pro-Tip: Set up chairs along the historic route early; the energy is infectious.</p>
                                     </div>
                                 </div>
                             </div>
@@ -262,19 +262,20 @@
                     <div class="relative p-10 bg-white/[0.02] border border-[var(--accent-gold)]/20 overflow-hidden">
                         <h4 class="font-serif text-3xl text-white italic">The Retail Gravity Shift</h4>
                         <div class="mt-8 space-y-6">
-                            <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">"The Golden Mile and southern Frederick corridor are seeing a resurgence in mixed-use zoning, aiming to bring pedestrian-friendly 'third spaces' closer to your doorstep via East Frederick Rising initiatives."</p>
+                            <p class="text-zinc-400 font-serif text-xl leading-relaxed italic">"The Golden Mile and East County corridors are undergoing a 'Digital Rebirth,' with significant infrastructure investments aimed at tech-hub expansion meeting historic charm."</p>
                             <div class="p-6 bg-[var(--accent-gold)]/5 border-l-2 border-[var(--accent-gold)]">
-                                <p class="text-white text-sm mt-2">Strategic industrial-to-creative hub transformations are expected to gain significant momentum by Q4 2026.</p>
+                                <p class="text-white text-sm mt-2">Forecasted maturity: Q4 2026. This zone is transitioning into a primary amenity anchor for Northern Maryland.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
         <footer class="mt-24 text-center pb-20">
             <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-16 max-w-4xl mx-auto">
-                <a href="#" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
+                <a href="https://truthengine.io/placeholder" class="flex-1 group px-8 py-5 flex items-center justify-center border border-white/10 transition-all duration-500 hover:border-[var(--accent-gold)]">
                     <span class="text-white group-hover:text-[var(--accent-gold)] text-[10px] font-bold uppercase tracking-[0.3em]">Attest to Excellence</span>
                 </a>
 
@@ -356,25 +357,34 @@
                 consultBtn.setAttribute('href', `https://calendly.com/mejia-pas/30min${trackingQuery}`);
                 consultBtn.setAttribute('target', '_blank');
                 consultBtn.addEventListener('mousedown', () => {
-                    gtag('event', 'dossier_dissection', { ...commonParams, 'method': 'Consult Intent' });
+                    gtag('event', 'dossier_dissection', { 
+                        ...commonParams, 
+                        'method': 'Consult Intent' 
+                    });
                 });
             }
 
             const licenseBtn = document.getElementById('dynamic-license-btn');
             if(licenseBtn) {
-                licenseBtn.href = `mailto:truthengine.ai@gmail.com?subject=Licensing: ${window.finalAssetId}&body=I am interested in licensing the Truth Engine™ for my clients.`;
+                licenseBtn.href = `mailto:truthengine.ai@gmail.com?subject=Licensing:${window.finalAssetId}&body=I am interested in licensing the Truth Engine™ for my clients.`;
                 licenseBtn.addEventListener('mousedown', () => {
-                    gtag('event', 'dossier_dissection', { ...commonParams, 'method': 'License Intent' });
+                    gtag('event', 'dossier_dissection', { 
+                        ...commonParams, 
+                        'method': 'License Intent' 
+                    });
                 });
             }
 
-            const attestBtn = document.querySelector('a[href="#"]');
-            if(attestBtn && attestBtn.innerText.includes("ATTEST")) {
+            const attestBtn = document.querySelector('a[href*="truthengine.io/placeholder"]');
+            if(attestBtn) {
                 const reviewUrl = "https://search.google.com/local/writereview?placeid=ChIJ1-Pra3HJt4kRsuAVx8ge7qY";
                 attestBtn.setAttribute('href', reviewUrl);
                 attestBtn.setAttribute('target', '_blank');
                 attestBtn.addEventListener('mousedown', () => {
-                    gtag('event', 'dossier_dissection', { ...commonParams, 'method': 'Review Intent' });
+                    gtag('event', 'dossier_dissection', { 
+                        ...commonParams, 
+                        'method': 'Review Intent' 
+                    });
                 });
             }
         });
